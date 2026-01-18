@@ -213,7 +213,6 @@
   </style>
 </head>
 <body>
-  <!-- الصفحة الرئيسية -->
   <div id="homePage">
     <div class="banner">
       <img src="flower.jpg" alt="بيت اللوتس">  
@@ -239,7 +238,6 @@
     </footer>
   </div>
 
-  <!-- صفحة عرض الزهور (للزوار) -->
   <div id="flowersPage" style="display:none;">
     <div class="container">
       <h2 class="section-title">زهورنا الفاخرة</h2>
@@ -248,7 +246,6 @@
     </div>
   </div>
 
-  <!-- لوحة التحكم (للمشرف) -->
   <div id="adminPage" style="display:none;">
     <div class="container">
       <h2 class="section-title">لوحة تحكم المتجر</h2>
@@ -289,7 +286,7 @@
       document.getElementById('adminPage').style.display = 'none';
     }
 
-    // عرض الزهور للزوار (بدون أزرار تعديل)
+    // عرض الزهور للزوار (تم تعديل مسار الصورة هنا)
     function renderFlowers() {
       const container = document.getElementById('flowersContainer');
       container.innerHTML = '';
@@ -304,7 +301,7 @@
         card.className = 'card';
         card.innerHTML = `
           <div class="card-img">
-            <img src="flowerImg/${flower.imageName}" 
+            <img src="${flower.imageName}" 
                  alt="${flower.name}"
                  onerror="this.src='https://images.unsplash.com/photo-1587049633312-d7f244e9b4a0?w=300&h=220&fit=crop';">
           </div>
@@ -318,7 +315,7 @@
       });
     }
 
-    // عرض الزهور للمشرف (مع أزرار التحكم)
+    // عرض الزهور للمشرف (تم تعديل مسار الصورة هنا أيضاً)
     function renderAdminFlowers() {
       const container = document.getElementById('adminFlowersContainer');
       container.innerHTML = '';
@@ -333,7 +330,7 @@
         card.className = 'card';
         card.innerHTML = `
           <div class="card-img">
-            <img src="flowerImg/${flower.imageName}" 
+            <img src="${flower.imageName}" 
                  alt="${flower.name}"
                  onerror="this.src='https://images.unsplash.com/photo-1587049633312-d7f244e9b4a0?w=300&h=220&fit=crop';">
           </div>
@@ -361,7 +358,7 @@
         return;
       }
       const description = prompt("الوصف (اختياري):") || "";
-      const imageName = prompt("اسم ملف الصورة (مثال: lotus.jpg):", "lotus.jpg");
+      const imageName = prompt("اسم ملف الصورة (مثل: lotus.jpg):", "lotus.jpg");
       if (!imageName) return;
 
       flowers.push({
